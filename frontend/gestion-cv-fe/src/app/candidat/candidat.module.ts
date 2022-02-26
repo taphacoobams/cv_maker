@@ -19,7 +19,6 @@ import { FormBuilder, FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CandidatRoutingModule,
-    FormBuilder,
     FormsModule
   ]
 })
