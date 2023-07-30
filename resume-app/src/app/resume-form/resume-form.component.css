@@ -1,0 +1,43 @@
+/* Styles pour le formulaire du CV */
+
+/* Style pour chaque section du formulaire (expérience, éducation, compétences, etc.) */
+.section-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Style pour les labels */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style pour les champs de saisie (input, select, textarea) */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style pour le bouton de soumission du formulaire */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}

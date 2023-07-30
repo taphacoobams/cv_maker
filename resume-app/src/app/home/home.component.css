@@ -1,0 +1,49 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #f0f0f0;
+  }
+  
+  /* Style du logo */
+  header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+/* Alignement vertical et centrage du contenu dans le main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Pour centrer le contenu verticalement */
+  }
+  
+  /* Style du bouton "Créer un CV" */
+  .create-cv-button-container {
+    margin-top: 20px;
+  }
+  
+  .create-cv-button {
+    padding: 16px 24px;
+    font-size: 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .create-cv-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style du footer */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+  }
+  

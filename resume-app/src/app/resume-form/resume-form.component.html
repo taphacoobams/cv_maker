@@ -1,0 +1,147 @@
+<!-- Formulaire du CV avec toutes les sections -->
+
+<form>
+    <!-- Informations personnelles -->
+    <h2>Informations personnelles</h2>
+  
+    <label for="firstName">Prenom :</label>
+    <input type="text" id="firstName" name="firstName" required>
+  
+    <label for="lastName">Nom :</label>
+    <input type="text" id="lastName" name="lastName" required>
+  
+    <label for="address">Adresse :</label>
+    <input type="text" id="address" name="address" required>
+  
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="photo">Photo :</label>
+    <input type="file" id="photo" name="photo" accept="image/*">
+  
+    <label for="birthdate">Date de naissance :</label>
+    <input type="date" id="birthdate" name="birthdate" required>
+  
+    <label for="telephone">Téléphone :</label>
+    <input type="tel" id="telephone" name="telephone" required>
+  
+    <label for="gender">Sexe :</label>
+    <select id="gender" name="gender" required>
+      <option value="male">Masculin</option>
+      <option value="female">Féminin</option>
+      <option value="other">Autre</option>
+    </select>
+  
+    <label for="nationality">Nationalité :</label>
+    <input type="text" id="nationality" name="nationality" required>
+  
+    <label for="maritalStatus">Situation matrimoniale :</label>
+    <select id="maritalStatus" name="maritalStatus" required>
+      <option value="single">Célibataire</option>
+      <option value="married">Marié(e)</option>
+      <option value="divorced">Divorcé(e)</option>
+      <option value="widowed">Veuf/Veuve</option>
+      <option value="other">Autre</option>
+    </select>
+  
+    <label for="description">Description :</label>
+    <textarea id="description" name="description" rows="4"></textarea>
+  
+    <!-- Expérience professionnelle -->
+    <h2>Expérience professionnelle</h2>
+    <div *ngFor="let experience of experiences; let i = index" class="section-container">
+      <label for="jobTitle{{i}}">Titre du poste :</label>
+      <input type="text" id="jobTitle{{i}}" name="jobTitle{{i}}" required>
+  
+      <label for="employer{{i}}">Employeur :</label>
+      <input type="text" id="employer{{i}}" name="employer{{i}}" required>
+  
+      <label for="startDate{{i}}">Date de début :</label>
+      <input type="date" id="startDate{{i}}" name="startDate{{i}}" required>
+  
+      <label for="endDate{{i}}">Date de fin :</label>
+      <input type="date" id="endDate{{i}}" name="endDate{{i}}">
+  
+      <!-- Bouton pour supprimer cette entrée -->
+      <button type="button" (click)="removeExperience(i)">Supprimer</button>
+    </div>
+    <!-- Bouton pour ajouter une nouvelle entrée d'expérience -->
+    <button type="button" (click)="addExperience()">Ajouter une expérience</button>
+  
+    <!-- Éducation -->
+    <h2>Éducation</h2>
+    <div *ngFor="let education of educations; let i = index" class="section-container">
+        <label for="institution{{i}}">Établissement :</label>
+        <input type="text" id="institution{{i}}" name="institution{{i}}" required>
+      
+        <label for="city{{i}}">Ville :</label>
+        <input type="text" id="city{{i}}" name="city{{i}}" required>
+      
+        <label for="eduStartDate{{i}}">Date de début :</label>
+        <input type="date" id="eduStartDate{{i}}" name="eduStartDate{{i}}" required>
+      
+        <label for="eduEndDate{{i}}">Date de fin :</label>
+        <input type="date" id="eduEndDate{{i}}" name="eduEndDate{{i}}">
+      
+        <label for="educationDescription{{i}}">Description :</label>
+        <textarea id="educationDescription{{i}}" name="educationDescription{{i}}" rows="4"></textarea>
+      
+        <!-- Bouton pour supprimer cette entrée -->
+        <button type="button" (click)="removeEducation(i)">Supprimer</button>
+    </div>
+    <!-- Bouton pour ajouter une nouvelle entrée d'éducation -->
+    <button type="button" (click)="addEducation()">Ajouter une éducation</button>
+  
+    <!-- Compétences -->
+    <h2>Compétences</h2>
+  <div *ngFor="let skill of skills; let i = index" class="section-container">
+    <label for="skillName{{i}}">Nom de la compétence :</label>
+    <input type="text" id="skillName{{i}}" name="skillName{{i}}" required>
+
+    <label for="skillLevel{{i}}">Niveau :</label>
+    <select id="skillLevel{{i}}" name="skillLevel{{i}}" required>
+      <option value="beginner">Débutant</option>
+      <option value="intermediate">Intermédiaire</option>
+      <option value="advanced">Avancé</option>
+      <option value="expert">Expert</option>
+    </select>
+
+    <!-- Bouton pour supprimer cette entrée -->
+    <button type="button" (click)="removeSkill(i)">Supprimer</button>
+  </div>
+  <button type="button" (click)="addSkill()">Ajouter une compétence</button>
+
+  <!-- Langues -->
+  <h2>Langues</h2>
+  <div *ngFor="let language of languages; let i = index" class="section-container">
+    <label for="languageName{{i}}">Nom de la langue :</label>
+    <input type="text" id="languageName{{i}}" name="languageName{{i}}" required>
+
+    <label for="languageLevel{{i}}">Niveau :</label>
+    <select id="languageLevel{{i}}" name="languageLevel{{i}}" required>
+      <option value="beginner">Débutant</option>
+      <option value="intermediate">Intermédiaire</option>
+      <option value="advanced">Avancé</option>
+      <option value="expert">Expert</option>
+    </select>
+
+    <!-- Bouton pour supprimer cette entrée -->
+    <button type="button" (click)="removeLanguage(i)">Supprimer</button>
+  </div>
+  <button type="button" (click)="addLanguage()">Ajouter une langue</button>
+
+  <h2>Loisirs</h2>
+  <div *ngFor="let hobby of hobbies; let i = index" class="section-container">
+    <label for="hobbyName{{i}}">Loisir :</label>
+    <input type="text" id="hobbyName{{i}}" name="hobbyName{{i}}" required>
+  
+    <!-- Bouton pour supprimer cette entrée -->
+    <button type="button" (click)="removeHobby(i)">Supprimer</button>
+  </div>
+  
+    <!-- Autres sections du CV (le cas échéant) -->
+  
+    <!-- Bouton de soumission du formulaire -->
+    <button type="submit">Soumettre</button>
+  </form>
+  
