@@ -42,7 +42,7 @@ export class ResumeFormComponent {
   }
 
   // Compétences
-  skills: any[] = [];
+  skills: any[] = [{ name: '', level: 1 },];
 
   addSkill() {
     this.skills.push({});
@@ -52,7 +52,7 @@ export class ResumeFormComponent {
     this.skills.splice(index, 1);
   }
 
-  languages: any[] = [];
+  languages: any[] = [{ name: '', level: 1 },];
 
   addLanguage() {
     this.languages.push({});
@@ -72,5 +72,21 @@ export class ResumeFormComponent {
     this.hobbies.splice(index, 1);
   }
 
-  // Autres sections (si nécessaire)
+  // Define a mapping of numeric levels to labels
+  levelLabels: { [key: number]: string } = {
+    1: 'Débutant',
+    2: 'Intermédiaire',
+    3: 'Avancé',
+    4: 'Expert'
+  };
+
+  // Function to get the level label based on the numeric level
+  getSkillLevelLabel(level: number): string {
+    return this.levelLabels[level];
+  }
+
+  getLanguageLevelLabel(level: number): string {
+    return this.levelLabels[level];
+  }
+
 }
